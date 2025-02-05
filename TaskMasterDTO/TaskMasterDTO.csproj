@@ -47,11 +47,5 @@
     <Compile Include="TipoUsuarioDTO.cs" />
     <Compile Include="UsuarioDTO.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="bolsonaro1.0">
-      <SubType>Component</SubType>
-    </None>
-    <None Include="bolsonaro1.Designer.0" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
