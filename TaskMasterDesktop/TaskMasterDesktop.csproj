@@ -105,6 +105,12 @@
     <EmbeddedResource Include="frmCadastrar.resx">
       <DependentUpon>frmCadastrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCT.resx">
+      <DependentUpon>frmCT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCU.resx">
+      <DependentUpon>frmCU.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEditarAdm.resx">
       <DependentUpon>frmEditarAdm.cs</DependentUpon>
     </EmbeddedResource>

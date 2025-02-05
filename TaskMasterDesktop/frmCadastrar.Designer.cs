@@ -44,7 +44,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(101)))), ((int)(((byte)(133)))));
-            this.button3.Location = new System.Drawing.Point(1124, 12);
+            this.button3.Location = new System.Drawing.Point(1136, 0);
             this.button3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(65, 63);
@@ -56,12 +56,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial", 50F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(101)))), ((int)(((byte)(133)))));
-            this.label2.Location = new System.Drawing.Point(485, 209);
+            this.label2.Location = new System.Drawing.Point(375, 112);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(196, 37);
+            this.label2.Size = new System.Drawing.Size(404, 78);
             this.label2.TabIndex = 82;
             this.label2.Text = "CADASTRO";
             // 
@@ -70,7 +70,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(101)))), ((int)(((byte)(133)))));
-            this.label3.Location = new System.Drawing.Point(403, 383);
+            this.label3.Location = new System.Drawing.Point(442, 383);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 16);
             this.label3.TabIndex = 81;
@@ -81,7 +81,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(101)))), ((int)(((byte)(133)))));
-            this.label1.Location = new System.Drawing.Point(403, 318);
+            this.label1.Location = new System.Drawing.Point(452, 316);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 16);
             this.label1.TabIndex = 78;
@@ -114,7 +114,7 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(101)))), ((int)(((byte)(133)))));
-            this.button5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Font = new System.Drawing.Font("Arial", 12F);
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Location = new System.Drawing.Point(502, 474);
             this.button5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);

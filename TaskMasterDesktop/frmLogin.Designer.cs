@@ -34,10 +34,10 @@
             this.button5 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox2
@@ -99,18 +99,6 @@
             this.label1.TabIndex = 70;
             this.label1.Text = "NOME";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(101)))), ((int)(((byte)(133)))));
-            this.label2.Location = new System.Drawing.Point(520, 234);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 37);
-            this.label2.TabIndex = 72;
-            this.label2.Text = "LOGIN";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -139,7 +127,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(101)))), ((int)(((byte)(133)))));
-            this.button3.Location = new System.Drawing.Point(1124, 12);
+            this.button3.Location = new System.Drawing.Point(1137, -1);
             this.button3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(65, 63);
@@ -148,14 +136,26 @@
             this.button3.UseCompatibleTextRendering = true;
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 50F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(101)))), ((int)(((byte)(133)))));
+            this.label7.Location = new System.Drawing.Point(452, 171);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(245, 78);
+            this.label7.TabIndex = 91;
+            this.label7.Text = "LOGIN";
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(243)))), ((int)(((byte)(207)))));
             this.ClientSize = new System.Drawing.Size(1200, 800);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -181,9 +181,9 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label7;
     }
 }

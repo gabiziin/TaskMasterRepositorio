@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mdiAdm));
-            this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -41,21 +40,10 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(101)))), ((int)(((byte)(133)))));
-            this.label1.Location = new System.Drawing.Point(480, 95);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(275, 37);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "ADMNISTRADOR";
             // 
             // button3
             // 
@@ -63,7 +51,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(101)))), ((int)(((byte)(133)))));
-            this.button3.Location = new System.Drawing.Point(1124, 12);
+            this.button3.Location = new System.Drawing.Point(1135, -3);
             this.button3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(65, 63);
@@ -185,18 +173,30 @@
             this.button6.Text = "CRIAR";
             this.button6.UseVisualStyleBackColor = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 50F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(101)))), ((int)(((byte)(133)))));
+            this.label1.Location = new System.Drawing.Point(335, 69);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(595, 78);
+            this.label1.TabIndex = 91;
+            this.label1.Text = "ADMINISTRADOR";
+            // 
             // mdiAdm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(243)))), ((int)(((byte)(207)))));
             this.ClientSize = new System.Drawing.Size(1200, 800);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button6);
@@ -215,8 +215,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
@@ -228,5 +226,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label1;
     }
 }
