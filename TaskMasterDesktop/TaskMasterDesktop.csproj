@@ -64,6 +64,18 @@
     <Compile Include="frmCU.Designer.cs">
       <DependentUpon>frmCU.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditarAdm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarAdm.Designer.cs">
+      <DependentUpon>frmEditarAdm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarUser.Designer.cs">
+      <DependentUpon>frmEditarUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,8 +102,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCadastrar.resx">
+      <DependentUpon>frmCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarAdm.resx">
+      <DependentUpon>frmEditarAdm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarUser.resx">
+      <DependentUpon>frmEditarUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHomePage.resx">
       <DependentUpon>frmHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mdiAdm.resx">
+      <DependentUpon>mdiAdm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mdiUser.resx">
+      <DependentUpon>mdiUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
