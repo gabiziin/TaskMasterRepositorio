@@ -14,5 +14,7 @@ namespace TaskMasterDTO
         public string EmailUsuario { get; set; }
         public string SenhaUsuario { get; set; }
         public string UsuarioTp { get; set; }
+
+        //Bolsonaro
     }
 }
