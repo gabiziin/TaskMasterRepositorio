@@ -13,7 +13,7 @@ namespace TaskMasterDTO
         public string DescricaoTarefa { get; set; }
         public string StatusTarefa { get; set; }
         public DateTime DataCriacao { get; set; }
-        public DateTime DataConclusao { get; set; }
+        public DateTime? DataConclusao { get; set; }
         public int UsuarioId { get; set; }
     }
 }

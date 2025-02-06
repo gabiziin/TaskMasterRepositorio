@@ -47,13 +47,13 @@
     <Compile Include="UsuarioBLL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TaskMasterDAL\TaskMasterDAL.csproj">
+    <ProjectReference Include="..\TaskMasterDAL\TaskMaster.DAL.csproj">
       <Project>{722bbcab-f18f-40b3-ab97-c74730642c7e}</Project>
-      <Name>TaskMasterDAL</Name>
+      <Name>TaskMaster.DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TaskMasterDTO\TaskMasterDTO.csproj">
+    <ProjectReference Include="..\TaskMasterDTO\TaskMaster.DTO.csproj">
       <Project>{d9387206-ba94-4b20-854f-999a42788a3d}</Project>
-      <Name>TaskMasterDTO</Name>
+      <Name>TaskMaster.DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

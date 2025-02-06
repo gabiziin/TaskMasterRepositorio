@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskMasterBLL", "TaskMasterBLL\TaskMasterBLL.csproj", "{17305F80-E17E-4EFB-A1D3-D825E8F37F4C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskMaster.BLL", "TaskMasterBLL\TaskMaster.BLL.csproj", "{17305F80-E17E-4EFB-A1D3-D825E8F37F4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskMasterDAL", "TaskMasterDAL\TaskMasterDAL.csproj", "{722BBCAB-F18F-40B3-AB97-C74730642C7E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskMaster.DAL", "TaskMasterDAL\TaskMaster.DAL.csproj", "{722BBCAB-F18F-40B3-AB97-C74730642C7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskMasterDTO", "TaskMasterDTO\TaskMasterDTO.csproj", "{D9387206-BA94-4B20-854F-999A42788A3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskMaster.DTO", "TaskMasterDTO\TaskMaster.DTO.csproj", "{D9387206-BA94-4B20-854F-999A42788A3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskMasterDesktop", "TaskMasterDesktop\TaskMasterDesktop.csproj", "{E6160DA6-1914-46F8-989E-F57412B6DD84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskMaster.Desktop", "TaskMasterDesktop\TaskMaster.Desktop.csproj", "{E6160DA6-1914-46F8-989E-F57412B6DD84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

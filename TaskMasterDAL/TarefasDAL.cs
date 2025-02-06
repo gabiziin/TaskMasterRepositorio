@@ -10,63 +10,58 @@ namespace TaskMasterDAL
 {
     public class TarefasDAL : Conexao
     {
-        private readonly string connectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; Initial Catalog = TaskMasterDB;Integrated Security = true";
-
         string msg = "Essa foi mais uma cagada que eu cometi no meu código !!";
 
-        //Create
-        public void Create(TarefasDTO tarefas)
+        // CREATE - Adicionar nova tarefa
+        public void Create(TarefasDTO tarefa)
         {
             try
             {
                 Conectar();
-                cmd = new SqlCommand("INSERT INTO Tarefas (IdTarefa, TituloTarefa, DescricaoTarefa, DataCriacao, DataConclusao, StatusTarefa UsuarioId) VALUES (@IdTarefa,@TituloTarefa,@DescricaoTarefa,@DataCriacao,@DataConclusao,@StatusTarefa,@UsuarioId);", conn);
-                cmd.Parameters.AddWithValue("@TituloTarefa", tarefas.TituloTarefa);
-                cmd.Parameters.AddWithValue("@DescricaoTarefa", tarefas.DescricaoTarefa);
-                cmd.Parameters.AddWithValue("@DataCriacao", tarefas.DataCriacao);
-                cmd.Parameters.AddWithValue("@DataConclusao", tarefas.DataConclusao);
-                cmd.Parameters.AddWithValue("@StatusTarefa", tarefas.DescricaoTarefa);
-                cmd.Parameters.AddWithValue("@UsuarioId", tarefas.UsuarioId);
+                cmd = new SqlCommand("INSERT INTO Tarefas (TituloTarefa, DescricaoTarefa, UsuarioId) VALUES (@TituloTarefa, @DescricaoTarefa, @UsuarioId);", conn);
+                cmd.Parameters.AddWithValue("@TituloTarefa", tarefa.TituloTarefa);
+                cmd.Parameters.AddWithValue("@DescricaoTarefa", tarefa.DescricaoTarefa);
+                cmd.Parameters.AddWithValue("@UsuarioId", tarefa.UsuarioId);
                 cmd.ExecuteNonQuery();
-
             }
             catch (Exception ex)
             {
-
                 throw new Exception($"{msg} - {ex.Message}");
             }
             finally
             {
                 Desconectar();
             }
-
         }
 
-        //Read
-        public List<TarefasDTO> GetTarefa()
+        // READ - Buscar todas as tarefas de um usuário específico
+        public List<TarefasDTO> GetTarefasByUsuario(int usuarioId)
         {
             try
             {
                 Conectar();
-                cmd = new SqlCommand("SELECT IdTarefa,TituloTarefa,DescricaoTarefa,StatusTarefa,DataCriacao,DataConclusao FROM Tarefas T INNER JOIN Usuario U ON T.UsuarioId = U.IdUsuario;", conn);
+                cmd = new SqlCommand("SELECT * FROM Tarefas WHERE UsuarioId = @UsuarioId;", conn);
+                cmd.Parameters.AddWithValue("@UsuarioId", usuarioId);
                 dr = cmd.ExecuteReader();
-                List<TarefasDTO> Lista = new List<TarefasDTO>();//lista vazia
+
+                List<TarefasDTO> lista = new List<TarefasDTO>();
                 while (dr.Read())
                 {
-                    TarefasDTO tarefas = new TarefasDTO();
-                    tarefas.IdTarefa = Convert.ToInt32(dr["IdTarefa"]);
-                    tarefas.TituloTarefa = dr["TituloTarefa"].ToString();
-                    tarefas.DescricaoTarefa = dr["DescricaoTarefa"].ToString();
-                    tarefas.StatusTarefa = dr["StatusTarefa"].ToString();
-                    tarefas.DataCriacao = Convert.ToDateTime(dr["DataCriacao"]);
-                    tarefas.DataConclusao = Convert.ToDateTime(dr["DataConclusao"]);
-                    Lista.Add(tarefas);
+                    TarefasDTO tarefa = new TarefasDTO();
+                    tarefa.IdTarefa = Convert.ToInt32(dr["IdTarefa"]);
+                    tarefa.TituloTarefa = dr["TituloTarefa"].ToString();
+                    tarefa.DescricaoTarefa = dr["DescricaoTarefa"].ToString();
+                    tarefa.DataCriacao = Convert.ToDateTime(dr["DataCriacao"]);
+                    tarefa.DataConclusao = dr["DataConclusao"] != DBNull.Value ? Convert.ToDateTime(dr["DataConclusao"]) : (DateTime?)null;
+                    tarefa.StatusTarefa = dr["StatusTarefa"].ToString();
+                    tarefa.UsuarioId = Convert.ToInt32(dr["UsuarioId"]);
+
+                    lista.Add(tarefa);
                 }
-                return Lista;
+                return lista;
             }
             catch (Exception ex)
             {
-
                 throw new Exception($"{msg} - {ex.Message}");
             }
             finally
@@ -75,79 +70,49 @@ namespace TaskMasterDAL
             }
         }
 
-        //Update
-        public void Update(TarefasDTO tarefas)
+        // UPDATE - Atualizar tarefa específica
+        public void Update(TarefasDTO tarefa)
         {
             try
             {
                 Conectar();
-                cmd = new SqlCommand("UPDATE Tarefas SET TituloTarefa = 'Tarefa Atualizada', StatusTarefa = 'Concluído', DataConclusao = GETDATE() WHERE IdTarefa = 1;", conn);
-                cmd.Parameters.AddWithValue("@TituloTarefa", tarefas.TituloTarefa);
-                cmd.Parameters.AddWithValue("@StatusTarefa", tarefas.StatusTarefa);
-                cmd.Parameters.AddWithValue("@DataConclusao", tarefas.DataConclusao);
+                cmd = new SqlCommand("UPDATE Tarefas SET TituloTarefa = @TituloTarefa, DescricaoTarefa = @DescricaoTarefa, StatusTarefa = @StatusTarefa, DataConclusao = @DataConclusao WHERE IdTarefa = @IdTarefa AND UsuarioId = @UsuarioId;", conn);
+                cmd.Parameters.AddWithValue("@TituloTarefa", tarefa.TituloTarefa);
+                cmd.Parameters.AddWithValue("@DescricaoTarefa", tarefa.DescricaoTarefa);
+                cmd.Parameters.AddWithValue("@StatusTarefa", tarefa.StatusTarefa);
+                cmd.Parameters.AddWithValue("@DataConclusao", tarefa.DataConclusao.HasValue ? (object)tarefa.DataConclusao.Value : DBNull.Value);
+                cmd.Parameters.AddWithValue("@IdTarefa", tarefa.IdTarefa);
+                cmd.Parameters.AddWithValue("@UsuarioId", tarefa.UsuarioId);
                 cmd.ExecuteNonQuery();
-
             }
             catch (Exception ex)
             {
-
                 throw new Exception($"{msg} - {ex.Message}");
             }
             finally
             {
                 Desconectar();
             }
-
         }
 
-        //Delete
-        public void Delete(int idTarefa)
+        // DELETE - Remover tarefa (apenas se pertencer ao usuário)
+        public void Delete(int idTarefa, int usuarioId)
         {
             try
             {
                 Conectar();
-                cmd = new SqlCommand("DELETE FROM Tarefas WHERE IdTarefa = 2;", conn);
+                cmd = new SqlCommand("DELETE FROM Tarefas WHERE IdTarefa = @IdTarefa AND UsuarioId = @UsuarioId;", conn);
                 cmd.Parameters.AddWithValue("@IdTarefa", idTarefa);
+                cmd.Parameters.AddWithValue("@UsuarioId", usuarioId);
                 cmd.ExecuteNonQuery();
-
             }
             catch (Exception ex)
             {
-
                 throw new Exception($"{msg} - {ex.Message}");
             }
             finally
             {
                 Desconectar();
-            }
-
-        }
-
-        //Adicionar tarefa
-        public void AdicionarTarefa(TarefasDTO tarefa)
-        {
-            // Query de inserção considerando as colunas definidas no script SQL.
-            string sql = @"INSERT INTO Tarefas 
-                           (TituloTarefa, DescricaoTarefa, DataCriacao, StatusTarefa, UsuarioId)
-                       VALUES 
-                           (@TituloTarefa, @DescricaoTarefa, @DataCriacao, @StatusTarefa, @UsuarioId)";
-
-            // Abre a conexão com o banco de dados utilizando o using para garantir a liberação dos recursos.
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    // Adiciona os parâmetros e seus respectivos valores
-                    cmd.Parameters.AddWithValue("@TituloTarefa", tarefa.TituloTarefa);
-                    cmd.Parameters.AddWithValue("@DescricaoTarefa", tarefa.DescricaoTarefa);
-                    cmd.Parameters.AddWithValue("@DataCriacao", tarefa.DataCriacao);
-                    cmd.Parameters.AddWithValue("@StatusTarefa", tarefa.StatusTarefa);
-                    cmd.Parameters.AddWithValue("@UsuarioId", tarefa.UsuarioId);
-
-                    // Executa o comando de inserção
-                    cmd.ExecuteNonQuery();
-                }
             }
         }
     }

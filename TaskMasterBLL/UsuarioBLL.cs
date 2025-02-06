@@ -13,28 +13,59 @@ namespace TaskMasterBLL
         UsuarioDTO userDTO = new UsuarioDTO();
         UsuarioDAL userDAL = new UsuarioDAL();
 
-        // Create - Cria uma nova tarefa
-        public void CreateUser(UsuarioDTO tarefa)
+        //Autentica o usuário, basicamente serve só pro login checar o usuário no banco
+        public UsuarioDTO AuthenticateUserBLL(string user, string password)
         {
-            userDAL.CreateUser(tarefa);
+            return userDAL.AuthenticateUser(user, password);
         }
 
-        // Read - Retorna todas as tarefas
-        public List<UsuarioDTO> GetUser()
+        //CRUD
+        //Create
+        public void CreateUserBLL(UsuarioDTO user)
         {
-            return UsuarioDAL.GetUser();
+            userDAL.CreateUser(user);
         }
 
-        // Update - Atualiza uma tarefa existente
-        public void UpdateUsuario(UsuarioDTO tarefa)
+        //Read
+        public List<UsuarioDTO> GetUserBLL()
         {
-            userDAL.UpdateUser(tarefa);
+            return userDAL.GetUser();
         }
 
-        // Delete - Exclui uma tarefa pelo ID
-        public void DeleteUsuario(int idTarefa)
+        //Update
+        public void UpdateUserBLL(UsuarioDTO user)
         {
-            userDAL.DeleteUser(idTarefa);
+            userDAL.UpdateUser(user);
+        }
+
+        //Delete
+        public void DeleteUserBLL(int idUser)
+        {
+            userDAL.DeleteUser(idUser);
+        }
+
+        //SearchById
+        public UsuarioDTO SearchByIdBLL(int idUser)
+        {
+            return userDAL.SearchById(idUser);
+        }
+
+        //SearchByName -- o método existe, mas ele está comentado
+        //public UsuarioDTO SearchByNameBLL(string nomeUser)
+        //{
+        //    return userDAL.SearchByName(nomeUser);
+        //}
+
+        //DDL/ComboBox - Tipos de usuário
+        public List<TipoUsuarioDTO> GetTypeUserBLL()
+        {
+            return userDAL.GetTypeUser();
+        }
+
+        //DDL/ComboBox - Gêneros de usuário
+        public List<GeneroUsuarioDTO> GetGenderUserBLL()
+        {
+            return userDAL.GetGenderUser();
         }
     }
 }
