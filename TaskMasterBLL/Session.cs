@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TaskMasterDTO
+namespace TaskMasterBLL
 {
-    internal class Class1
+    internal class Session
     {
     }
 }

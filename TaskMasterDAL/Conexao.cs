@@ -19,7 +19,11 @@ namespace TaskMasterDAL
         {
             try
             {
-                conn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; Initial Catalog = TaskMasterDB;Integrated Security = true");
+                //Usar no SENAC \/
+                //conn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; Initial Catalog = TaskMasterDB;Integrated Security = true");
+
+                //Usar em casa \/
+                conn = new SqlConnection(@"Data Source = localhost; Initial Catalog = TaskMasterDB;Integrated Security = true");
                 conn.Open();
             }
             catch (Exception ex)

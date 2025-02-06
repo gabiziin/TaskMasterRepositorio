@@ -12,8 +12,8 @@ namespace TaskMasterDTO
         public string TituloTarefa { get; set; }
         public string DescricaoTarefa { get; set; }
         public string StatusTarefa { get; set; }
-
-        //Perguntar sobre as datas
-        public int UsuarioTp { get; set; }
+        public DateTime DataCriacao { get; set; }
+        public DateTime DataConclusao { get; set; }
+        public int UsuarioId { get; set; }
     }
 }
